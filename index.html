@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17211d">
+<meta name="description" content="Your personal 30-day photography and videography masterclass.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>FrameLab — Photography Masterclass</title>
+<style>
+:root{--bg:#f4f3ef;--panel:#fff;--ink:#17211d;--muted:#68736c;--line:#e2e4dd;--accent:#b6e35b;--dark:#17211d;--soft:#eaf0df;--danger:#a43d32}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:1120px;margin:auto;min-height:100vh;padding-bottom:88px}
+header{background:var(--dark);color:#fff;padding:22px 18px 20px;border-radius:0 0 26px 26px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c5d3c8;font-weight:800}.pill{border:1px solid #536057;border-radius:99px;padding:6px 10px;font-size:12px;color:#e6eddf}
+h1{font-size:clamp(27px,6vw,42px);line-height:1.05;letter-spacing:-.04em;margin:22px 0 10px;max-width:680px}header p{color:#cbd5cc;margin:0;max-width:600px}
+.progress-wrap{margin-top:22px}.progress-label{display:flex;justify-content:space-between;font-size:12px;color:#d3ddd4;margin-bottom:8px}.progress{height:7px;background:#435047;border-radius:99px;overflow:hidden}.progress>div{height:100%;background:var(--accent);width:0%;transition:width .2s}
+main{padding:18px}.tabs{display:flex;gap:8px;overflow:auto;padding:3px 0 14px;position:sticky;top:0;background:var(--bg);z-index:3}.tab{border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 14px;white-space:nowrap;font-weight:700;font-size:13px;color:var(--muted)}.tab.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+.view{display:none}.view.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:8px 0 14px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);font-weight:800}.section-head h2{margin:3px 0 0;font-size:25px;letter-spacing:-.03em}.sub{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;min-width:0}.stat{font-size:29px;font-weight:850;letter-spacing:-.04em}.stat-label{font-size:12px;color:var(--muted)}.hero-card{background:var(--soft);border:1px solid #dce5cf;border-radius:20px;padding:19px;margin:12px 0 16px}.hero-card h3{margin:6px 0 7px;font-size:22px;letter-spacing:-.03em}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.btn{border:0;border-radius:12px;padding:11px 15px;background:var(--dark);color:#fff;font-weight:750}.btn.secondary{background:#edf0e9;color:var(--ink);border:1px solid var(--line)}.btn.accent{background:var(--accent);color:var(--ink)}.btn.small{padding:8px 10px;font-size:12px}.day-list{display:grid;gap:9px}.day{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px;width:100%;text-align:left;color:inherit}.day-num{width:42px;height:42px;display:grid;place-items:center;flex-shrink:0;border-radius:12px;background:#f0f1eb;font-weight:850}.day.done .day-num{background:var(--accent)}.day-info{flex:1;min-width:0}.day-info strong{display:block;font-size:14px}.day-info span{font-size:12px;color:var(--muted)}.check{font-size:20px;color:#7b897d}
+.lesson-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:14px}.lesson-title{font-size:30px;letter-spacing:-.04em;line-height:1.08;margin:8px 0}.lesson-copy{color:#38443c}.lesson-copy h3{margin:20px 0 6px}.lesson-copy p,.lesson-copy li{font-size:14px}.lesson-copy ul{padding-left:20px}.callout{background:#f3f5ee;border-radius:13px;padding:13px;margin:14px 0}.checklist{display:grid;gap:10px;margin:14px 0}.checklist label{display:flex;gap:10px;align-items:flex-start;font-size:14px}.checklist input{margin-top:4px;accent-color:#536e2a;width:17px;height:17px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:12px;font-weight:800;color:var(--muted)}.field input,.field textarea,.field select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink)}textarea{min-height:85px;resize:vertical}.upload-zone{border:1.5px dashed #a9b2a6;background:#fafbf7;border-radius:15px;padding:18px;text-align:center}.upload-zone input{max-width:100%;font-size:12px}.file-list{display:grid;gap:8px;margin-top:10px}.file-item{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff}.thumb{width:48px;height:48px;border-radius:8px;object-fit:cover;background:#eee}.file-meta{flex:1;min-width:0;font-size:12px}.file-meta strong{display:block;overflow-wrap:anywhere}.file-meta span{color:var(--muted)}.empty{padding:25px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:16px}.note{font-size:12px;color:var(--muted)}.review-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;margin-top:12px}.rating{display:grid;grid-template-columns:1fr 1fr;gap:10px}.rating .field{margin:0}.rating input{width:100%}.footer{padding:0 18px 25px;color:var(--muted);font-size:11px;text-align:center}.bottom-nav{display:none}
+@media(max-width:700px){main{padding:14px}.cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.card{padding:12px}.stat{font-size:24px}.stat-label{font-size:10px}.lesson-layout{grid-template-columns:1fr}.section-head h2{font-size:22px}.bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:5;justify-content:space-around;background:#fff;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -5px 20px #17211d0a}.bottom-nav button{background:none;border:0;color:var(--muted);font-size:10px;font-weight:750;display:grid;gap:3px;justify-items:center}.bottom-nav button span{font-size:19px}.bottom-nav button.active{color:var(--ink)}.tabs{display:none}header{padding:20px 16px;border-radius:0 0 22px 22px}.pill{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="top"><div class="brand">FRAMELAB / FIELD SCHOOL</div><div class="pill">30-DAY MASTERCLASS</div></div>
+  <h1>Train your eye.<br>Tell better stories.</h1>
+  <p>A practical photography & videography course built around daily shooting, honest critique and visible progress.</p>
+  <div class="progress-wrap"><div class="progress-label"><span>YOUR COURSE PROGRESS</span><strong id="progressText">0 / 30 days</strong></div><div class="progress"><div id="progressBar"></div></div></div>
+</header>
+<main>
+<nav class="tabs" aria-label="Main navigation">
+<button class="tab active" data-view="home">Overview</button><button class="tab" data-view="lessons">30-day plan</button><button class="tab" data-view="work">My work</button><button class="tab" data-view="review">Review notes</button>
+</nav>
+<section class="view active" id="home">
+  <div class="section-head"><div><div class="eyebrow">Your learning studio</div><h2>Welcome back.</h2></div><span class="pill" style="background:#fff;color:#52614f;border-color:#d9ded4">Beginner track</span></div>
+  <div class="cards">
+    <div class="card"><div class="stat" id="daysStat">0/30</div><div class="stat-label">Days completed</div></div>
+    <div class="card"><div class="stat" id="workStat">0</div><div class="stat-label">Work submissions</div></div>
+    <div class="card"><div class="stat">35m</div><div class="stat-label">Daily target</div></div>
+  </div>
+  <div class="hero-card"><div class="eyebrow">Continue learning · Day 1</div><h3 id="nextTitle">The photographic eye</h3><p class="sub" id="nextDesc">Learn to notice subject, light, background and framing before pressing the shutter.</p><button class="btn" onclick="openLesson(nextLesson())">Open today's lesson ↗</button></div>
+  <div class="section-head"><div><div class="eyebrow">Your equipment</div><h2>Use what you own.</h2></div></div>
+  <div class="cards">
+    <div class="card"><strong>Nikon D5600</strong><p class="sub">Primary camera for exposure, focus and composition.</p></div>
+    <div class="card"><strong>OnePlus phone</strong><p class="sub">Daily visual practice and quick edits.</p></div>
+    <div class="card"><strong>GoPro / drone</strong><p class="sub">Action, movement and aerial storytelling later in the course.</p></div>
+  </div>
+  <div class="callout"><strong>Mentor's rule</strong><br><span class="sub">Shoot first, edit later. Upload original work and include what you were trying to achieve. This app organizes your learning; bring submissions into your ChatGPT mentor chat for detailed visual critique.</span></div>
+</section>
+<section class="view" id="lessons">
+  <div class="section-head"><div><div class="eyebrow">The curriculum</div><h2>30 days. One skill at a time.</h2></div></div>
+  <div id="dayList" class="day-list"></div>
+</section>
+<section class="view" id="lesson">
+  <button class="btn secondary small" onclick="showView('lessons')">← All lessons</button>
+  <div class="lesson-layout" style="margin-top:14px">
+    <article class="card">
+      <div class="eyebrow" id="lessonDay">DAY 1 · FOUNDATIONS</div><h2 class="lesson-title" id="lessonTitle"></h2><p class="sub" id="lessonTime">35 minutes</p>
+      <div class="lesson-copy" id="lessonBody"></div>
+      <div class="field"><label>MY NOTES / WHAT I LEARNED</label><textarea id="lessonNotes" placeholder="What did you notice? What would you change next time?"></textarea></div>
+      <button class="btn accent" onclick="saveNotes()">Save lesson notes</button>
+    </article>
+    <aside class="card">
+      <div class="eyebrow">Today's field task</div><h3 id="taskTitle">Three ways to see</h3><p class="sub" id="taskDesc"></p>
+      <div id="taskChecks" class="checklist"></div>
+      <button class="btn" style="width:100%" onclick="showView('work')">Upload my work →</button>
+      <p class="note">Mark the task complete after shooting and reviewing your own images.</p>
+    </aside>
+  </div>
+</section>
+<section class="view" id="work">
+  <div class="section-head"><div><div class="eyebrow">Field journal</div><h2>Upload your work.</h2></div></div>
+  <div class="card">
+    <p class="sub">Add your photos, short clips, or exported edits. Files are kept in this browser on this device. For mentor feedback, attach the images or video clips to your ChatGPT course conversation too.</p>
+    <div class="field"><label>LESSON</label><select id="workDay"></select></div>
+    <div class="field"><label>SUBMISSION TITLE</label><input id="workTitle" placeholder="e.g. Window light — three compositions"></div>
+    <div class="upload-zone"><div style="font-size:28px">＋</div><strong>Choose photos or videos</strong><p class="note">JPG, PNG, HEIC where supported, MP4 and other browser-readable files</p><input id="workFiles" type="file" accept="image/*,video/*" multiple></div>
+    <div class="field"><label>MY INTENT / SETTINGS / QUESTION</label><textarea id="workDescription" placeholder="What were you aiming for? Camera or phone? Settings if known? What feedback do you need?"></textarea></div>
+    <button class="btn accent" onclick="saveWork()">Save submission to this device</button>
+    <p class="note" id="storageNote">Local storage only — no account or cloud sync in this starter version. Large videos may exceed browser storage limits.</p>
+  </div>
+  <div class="section-head" style="margin-top:22px"><div><div class="eyebrow">Your portfolio</div><h2>Saved submissions</h2></div><button class="btn secondary small" onclick="exportJournal()">Export journal</button></div>
+  <div id="workList" class="file-list"></div>
+</section>
+<section class="view" id="review">
+  <div class="section-head"><div><div class="eyebrow">Mentor feedback log</div><h2>Review & improve.</h2></div></div>
+  <div class="card">
+    <p class="sub">After you receive feedback in ChatGPT, save the key takeaways here. Your scores help you notice improvement over time.</p>
+    <div class="field"><label>LESSON / SUBMISSION</label><select id="reviewDay"></select></div>
+    <div class="field"><label>MENTOR FEEDBACK / NEXT RESHOOT</label><textarea id="reviewText" placeholder="What worked, what to improve, and the next specific exercise"></textarea></div>
+    <div class="rating">
+      <div class="field"><label>COMPOSITION (1–5)</label><input id="rComp" type="number" min="1" max="5" value="3"></div>
+      <div class="field"><label>LIGHT (1–5)</label><input id="rLight" type="number" min="1" max="5" value="3"></div>
+      <div class="field"><label>EXPOSURE (1–5)</label><input id="rExp" type="number" min="1" max="5" value="3"></div>
+      <div class="field"><label>FOCUS (1–5)</label><input id="rFocus" type="number" min="1" max="5" value="3"></div>
+    </div>
+    <button class="btn accent" onclick="saveReview()">Save review</button>
+  </div>
+  <div id="reviewList" class="file-list" style="margin-top:14px"></div>
+</section>
+</main>
+<div class="footer">FRAMELAB · A personal learning companion · Version 0.1 starter<br>Progress and files are stored locally in this browser.</div>
+<nav class="bottom-nav">
+<button class="active" data-view="home"><span>⌂</span>Home</button><button data-view="lessons"><span>▤</span>Lessons</button><button data-view="work"><span>＋</span>My work</button><button data-view="review"><span>✎</span>Reviews</button>
+</nav>
+</div>
+<script>
+const lessons=[
+["The photographic eye","Learn to notice subject, light, background and framing before pressing the shutter.","Foundations","Pick one object. Make three frames: centred, off-centre with negative space, and from a low or high angle. Keep the subject the same.","A photograph is a set of decisions: subject, light, composition, exposure, focus and timing. Before pressing the shutter, ask what should attract attention first. Move your feet before changing settings. Today, observe how background and angle change the story."],
+["The exposure triangle","Understand aperture, shutter speed and ISO as three connected controls.","Camera basics","Photograph the same still subject in steady light. Note the settings your camera chooses in Auto, then explore Aperture Priority if comfortable.","Exposure is the amount of light recorded. Aperture affects light and depth of field; shutter speed affects light and motion; ISO affects brightness amplification and noise. There is no single perfect setting—the creative goal determines the trade-off."],
+["Aperture and depth of field","Control background blur and the area that appears sharp.","Camera basics","Photograph a subject with a background several metres behind it. Try the widest available aperture, then f/8 if light allows. Compare.","Smaller f-numbers mean wider apertures. Wider apertures often create shallower depth of field. Distance to subject, focal length and subject-background separation also affect blur."],
+["Shutter speed and motion","Freeze action or intentionally show movement.","Camera basics","Photograph a moving person or flowing water safely. Compare a fast shutter with a slower one, keeping camera shake in mind.","Fast shutter speeds freeze motion but need more light. Slow shutter speeds can convey motion but risk blur. Stabilize the camera when the subject is stationary."],
+["ISO and image noise","Balance clean files with the exposure you need.","Camera basics","Make a series of indoor images at low and higher ISO while keeping the subject and framing similar. Inspect at 100% zoom.","Start with low ISO when light allows. Increase ISO rather than accepting an unusably dark or motion-blurred image. Noise depends on exposure, sensor and processing."],
+["Focal length and perspective","Understand framing, field of view and camera position.","Camera basics","Photograph the same subject at two focal lengths. Then move closer or farther and compare the background relationship.","Focal length changes field of view. Perspective is determined by camera position; zooming from the same spot changes framing, while moving changes spatial relationships."],
+["Focus and metering","Choose what should be sharp and how brightness is measured.","Camera basics","Take five portraits or object photos focusing on different points. Check focus by zooming in on playback.","Autofocus mode, focus point and metering solve different problems. Use single AF for still subjects and continuous AF for moving subjects when appropriate."],
+["Rule of thirds and balance","Place subjects with intention rather than by habit.","Composition","Make two frames of one subject: centred and positioned near a thirds intersection. Compare balance and negative space.","The rule of thirds is a starting point, not a law. Consider gaze direction, movement, visual weight and the space around the subject."],
+["Leading lines and geometry","Guide the viewer's eye through the frame.","Composition","Find a path, railing, road marking or row of objects. Make lines lead toward a clear subject.","Lines can create direction and depth. Avoid letting strong lines lead out of the frame unless that is intentional."],
+["Framing and layers","Create depth with foreground, middle ground and background.","Composition","Make a frame through a doorway, leaves or another natural frame. Include at least two depth layers.","Foreground elements can guide attention and add depth. Keep framing elements from becoming distracting or merging awkwardly with the subject."],
+["Light direction and shadows","Use side light, front light and backlight deliberately.","Light","Photograph one object near a window from three directions. Observe shadow shape, contrast and texture.","Front light often reduces visible texture; side light reveals shape; backlight can create separation or silhouettes. Watch highlights and reflected light."],
+["Color and negative space","Use color relationships and empty space to simplify an image.","Composition","Create one image with a dominant color and one with a clean area of negative space around the subject.","Color can harmonize or create contrast. Negative space gives the viewer room to rest and can make a subject feel isolated, calm or small."],
+["Landscape and environment","Build a strong frame with foreground, middle ground and background.","Composition","Photograph an outdoor scene with a foreground element and a clear point of interest.","A wide scene still needs a subject or visual anchor. Check edges, horizons, weather and light before capturing."],
+["Everyday story and portrait","Show a person or object in context, not just as a cut-out.","Composition","Make three images that tell a mini-story: wide scene, medium view and detail.","A sequence can show where something happens, what happens, and a meaningful detail. Respect privacy and ask permission when appropriate."],
+["Video frame rates","Choose a frame rate based on the movement and delivery.","Videography","Record the same 5-second action at 25/30 fps and 50/60 fps if available. Compare playback and file size.","Frame rate describes captured frames per second. Common choices include 25/30 fps for normal motion and 50/60 fps for smoother motion or slow motion in a 25/30 fps timeline."],
+["Video shutter and white balance","Keep motion natural and color consistent.","Videography","Record a 10-second clip with stable framing. Lock white balance if you can and avoid changing it mid-shot.","A common starting point is a shutter near twice the frame rate (e.g. 1/50 at 25 fps). It is a guideline, not a rule. Consistent white balance prevents distracting color shifts."],
+["Shot sizes and angles","Use wide, medium and close shots to communicate information.","Videography","Film a simple action in three shots: wide, medium, close-up. Keep screen direction understandable.","Wide shots establish place, medium shots show action, and close-ups reveal details or emotion. Shot variety makes edits more engaging."],
+["Movement and stabilization","Move the camera only when movement helps the story.","Videography","Capture one locked-off shot and one slow, controlled move. Compare stability and purpose.","A static shot can be powerful. Walk smoothly, use two hands, and avoid movement without a reason. Stabilization cannot fix every type of motion."],
+["B-roll and continuity","Build a sequence that can be edited smoothly.","Videography","Film five short details of one activity, keeping direction and light consistent.","B-roll provides context and covers cuts. Record handles before and after action; capture more than one angle."],
+["Audio and ambient sound","Record clean sound and notice the soundscape.","Videography","Record 20 seconds of ambient sound in a quiet safe location, then capture a short spoken line.","Move closer to the sound source, avoid wind and handling noise, and monitor levels when possible. Music should support, not overwhelm, the story."],
+["A short visual story","Combine shots into a sequence with a beginning, middle and end.","Videography","Film a 20–30 second story using an establishing shot, action, details and a closing frame.","Story structure matters more than fancy effects. Capture enough coverage so each cut has a clear purpose."],
+["Photo selection and cropping","Choose the strongest frame and refine its edges.","Editing","Select your best three images. Crop one only if it strengthens the frame; keep an untouched original.","Cull for focus, expression, timing and storytelling. Cropping can improve composition but cannot recover missing detail."],
+["Tone and exposure editing","Adjust brightness, highlights, shadows and contrast naturally.","Editing","Edit one RAW or JPEG photo. Make a subtle version and compare it to the original.","Start with exposure and white balance, then highlights, shadows, whites, blacks and contrast. Avoid clipping important detail."],
+["White balance and color correction","Make colors believable before adding a style.","Editing","Correct a photo that looks too warm or cool. Compare skin tones or neutral objects where available.","Color correction restores a plausible base. Color grading adds mood. Make correction decisions before applying a strong look."],
+["Video timeline and transitions","Assemble clips into a clean sequence.","Editing","Edit your five B-roll clips into a 15–20 second sequence using mostly straight cuts.","Organize clips, trim dead time, establish pacing, and use transitions only when they help. Keep a backup of originals."],
+["Pacing and sound design","Use timing and sound to strengthen the story.","Editing","Add ambient sound or a music track to your short sequence. Adjust cuts to feel intentional.","Audio continuity matters. Use licensed or permitted music, keep levels comfortable, and avoid cutting every shot to every beat."],
+["Color grading and matching","Create a consistent look across shots.","Editing","Match exposure and white balance across three clips before adding a subtle creative grade.","Consistency comes before a dramatic look. Check shadows, skin tones, saturation and whether adjacent shots feel like the same scene."],
+["Export and delivery","Choose practical settings for sharing and archiving.","Editing","Export one short video and inspect it on your phone. Keep a high-quality master if storage permits.","Use the frame size and frame rate of your project; avoid repeated re-encoding. Keep originals and final exports clearly named."],
+["Plan your travel film","Create a shot list before filming.","Final project","Plan a 30–45 second mini travel story with an opening, journey, details and ending.","A good shoot begins with a purpose. Make a shot list, consider light and weather, and capture wide, medium, detail and ambient sound."],
+["Shoot and edit your film","Complete your final 30–45 second travel story.","Final project","Shoot your planned sequence, edit it, and write down three things you would improve.","Aim for coherent storytelling, consistent color, stable shots and clean sound. Do not sacrifice safety to capture footage."],
+["Final review and next steps","Assess your strengths and build a continued practice routine.","Final project","Choose your best photo and video, then compare them with your earliest work.","Review progress honestly. Identify one technical strength, one creative strength and two skills to continue practising."]
+];
+let db={done:[],notes:{},work:[],reviews:[]};
+const $=id=>document.getElementById(id);
+function load(){try{const x=JSON.parse(localStorage.getItem("framelab-data-v1")||"{}");db={...db,...x}}catch(e){}}
+function persist(){try{localStorage.setItem("framelab-data-v1",JSON.stringify(db));return true}catch(e){return false}}
+function nextLesson(){for(let i=1;i<=30;i++)if(!db.done.includes(i))return i;return 30}
+function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===id));window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+function render(){let n=db.done.length;$("progressText").textContent=`${n} / 30 days`;$("progressBar").style.width=(n/30*100)+"%";$("daysStat").textContent=`${n}/30`;$("workStat").textContent=db.work.length;$("nextTitle").textContent=lessons[nextLesson()-1][0];$("nextDesc").textContent=lessons[nextLesson()-1][1];
+$("dayList").innerHTML=lessons.map((l,i)=>`<button class="day ${db.done.includes(i+1)?"done":""}" onclick="openLesson(${i+1})"><span class="day-num">${db.done.includes(i+1)?"✓":String(i+1).padStart(2,"0")}</span><span class="day-info"><strong>${esc(l[0])}</strong><span>${esc(l[2])} · 30–45 min</span></span><span class="check">›</span></button>`).join("");
+["workDay","reviewDay"].forEach(id=>$(id).innerHTML=lessons.map((l,i)=>`<option value="${i+1}">Day ${i+1} — ${esc(l[0])}</option>`).join(""));
+renderWork();renderReviews()}
+function openLesson(day){let l=lessons[day-1];$("lessonDay").textContent=`DAY ${day} · ${l[2].toUpperCase()}`;$("lessonTitle").textContent=l[0];$("lessonBody").innerHTML=`<p>${esc(l[4])}</p><h3>What to understand</h3><p>${esc(l[1])}</p><div class="callout"><strong>Mentor prompt</strong><br>Before you shoot, decide what the viewer should notice first. Make one change at a time so you can see what caused the difference.</div><h3>Field assignment</h3><p>${esc(l[3])}</p><h3>After shooting</h3><ul><li>Pick your strongest frame or clip.</li><li>Describe what you intended.</li><li>Note one thing to improve on your next attempt.</li></ul>`;
+$("taskTitle").textContent=`Day ${day} field task`;$("taskDesc").textContent=l[3];$("taskChecks").innerHTML=[`Read the lesson: ${l[0]}`, "Complete the practical assignment","Review your result and note one improvement"].map((t,i)=>`<label><input type="checkbox" id="task${i}" ${db.done.includes(day)?"checked":""} onchange="taskToggle(${day})"><span>${esc(t)}</span></label>`).join("");
+$("lessonNotes").value=db.notes[day]||"";$("lessonNotes").dataset.day=day;showView("lesson")}
+function taskToggle(day){let all=[0,1,2].every(i=>$("task"+i).checked);if(all&&!db.done.includes(day))db.done.push(day);if(!all)db.done=db.done.filter(x=>x!==day);persist();render()}
+function saveNotes(){let d=+$("lessonNotes").dataset.day;db.notes[d]=$("lessonNotes").value;persist();alert("Lesson notes saved on this device.");}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+async function saveWork(){let files=[...$("workFiles").files];if(!files.length){alert("Please choose at least one photo or video.");return}let title=$("workTitle").value.trim()||`Day ${$("workDay").value} submission`;for(const f of files){let item={id:Date.now()+"-"+Math.random().toString(16).slice(2),day:+$("workDay").value,title,description:$("workDescription").value,name:f.name,type:f.type,size:f.size,date:new Date().toISOString(),data:null};if(f.size>12*1024*1024){alert(`${f.name} is larger than 12 MB. This starter keeps files locally; use a smaller export or attach the original in ChatGPT.`);continue}item.data=await new Promise((resolve,reject)=>{let r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(f)});db.work.unshift(item)}if(!persist()){$("storageNote").textContent="Storage limit reached. Export your journal and remove large files, or keep originals in your device gallery.";alert("Browser storage may be full. Export your journal and try smaller files.");} $("workFiles").value="";render();alert("Submission saved locally. For mentor critique, attach the work in your ChatGPT course conversation.");}
+function renderWork(){if(!db.work.length){$("workList").innerHTML='<div class="empty">No submissions yet.<br><span class="note">Your first field assignment is waiting.</span></div>';return}$("workList").innerHTML=db.work.map(w=>`<div class="file-item">${w.type.startsWith("image/")&&w.data?`<img class="thumb" src="${w.data}">`:`<div class="thumb" style="display:grid;place-items:center">▶</div>`}<div class="file-meta"><strong>${esc(w.title)} · Day ${w.day}</strong><span>${esc(w.name)} · ${(w.size/1048576).toFixed(1)} MB</span><br><span>${esc(w.description||"No notes")}</span></div><button class="btn secondary small" onclick="downloadWork('${w.id}')">Save</button><button class="btn secondary small" onclick="deleteWork('${w.id}')">×</button></div>`).join("")}
+function downloadWork(id){let w=db.work.find(x=>x.id===id);if(!w||!w.data){alert("File data unavailable.");return}let a=document.createElement("a");a.href=w.data;a.download=w.name;a.click()}
+function deleteWork(id){if(confirm("Delete this local submission?")){db.work=db.work.filter(x=>x.id!==id);persist();render()}}
+function saveReview(){db.reviews.unshift({day:+$("reviewDay").value,text:$("reviewText").value,comp:+$("rComp").value,light:+$("rLight").value,exp:+$("rExp").value,focus:+$("rFocus").value,date:new Date().toISOString()});persist();$("reviewText").value="";renderReviews();alert("Review saved.");}
+function renderReviews(){if(!db.reviews.length){$("reviewList").innerHTML='<div class="empty">Your mentor feedback log will appear here.</div>';return}$("reviewList").innerHTML=db.reviews.map(r=>`<div class="review-box"><div class="row"><strong>Day ${r.day} — ${esc(lessons[r.day-1][0])}</strong><span class="note">${new Date(r.date).toLocaleDateString()}</span></div><p>${esc(r.text||"No written feedback")}</p><div class="note">Composition ${r.comp}/5 · Light ${r.light}/5 · Exposure ${r.exp}/5 · Focus ${r.focus}/5</div></div>`).join("")}
+function exportJournal(){let safe={...db,work:db.work.map(w=>({...w,data:null,hasLocalFile:!!w.data}))};let blob=new Blob([JSON.stringify({app:"FrameLab",exportedAt:new Date().toISOString(),journal:safe},null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="framelab-learning-journal.json";a.click();URL.revokeObjectURL(a.href)}
+load();render();
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body>
+</html>
